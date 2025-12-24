@@ -2,12 +2,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class GenerateReadme {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String readmeContent = """
 # 🚀 Data Structures and Algorithms in Java
 
-This repository contains implementations of **core Data Structures and Algorithms (DSA)** concepts using **Java**.  
-It is designed for learning, interview preparation, and improving problem-solving skills.
+This repository showcases my **hands-on implementation of core Data Structures and Algorithms (DSA)** using **Java**.  
+The goal of this project is to strengthen fundamental programming concepts, enhance problem-solving skills, and prepare for technical interviews.
 
 ---
 
@@ -16,9 +16,9 @@ It is designed for learning, interview preparation, and improving problem-solvin
 - Arrays and Strings  
 - Linked Lists (Singly, Doubly, Circular)  
 - Stacks and Queues  
-- Trees (Binary Tree, BST, Traversals)  
+- Trees (Binary Tree, Binary Search Tree, Traversals)  
 - Heaps and Priority Queues  
-- Graphs (BFS, DFS, Shortest Paths)  
+- Graphs (BFS, DFS, Dijkstra’s Algorithm, Topological Sort)  
 - Recursion and Backtracking  
 - Sorting and Searching Algorithms  
 - Dynamic Programming  
@@ -36,23 +36,24 @@ src/
  ├── queues/
  ├── trees/
  ├── graphs/
- └── sorting/
+ ├── sorting/
+ └── dynamicprogramming/
 ```
 
-Each folder contains multiple Java files demonstrating algorithms and problem solutions.
+Each folder contains Java files demonstrating algorithmic solutions, code explanations, and test examples.
 
 ---
 
-## 🧠 How to Run
+## ⚙️ How to Run
 
 1. Clone the repository:
    ```bash
    git clone https://github.com/<your-username>/<your-repo-name>.git
    ```
 
-2. Open the project in **IntelliJ IDEA**, **VS Code**, or any IDE that supports Java.
+2. Open the project in **IntelliJ IDEA**, **Eclipse**, or **VS Code** with a Java extension.
 
-3. Compile and run a specific program:
+3. Compile and run:
    ```bash
    javac src/arrays/Example.java
    java src.arrays.Example
@@ -60,30 +61,29 @@ Each folder contains multiple Java files demonstrating algorithms and problem so
 
 ---
 
-## 🌟 Key Learnings
+## 🌟 Highlights
 
-- Understanding time and space complexities.  
-- Hands-on implementation of classic algorithms.  
-- Writing clean and optimized Java code.
+- Implemented 50+ DSA programs in Java.  
+- Focused on **time and space complexity analysis**.  
+- Clean and modular code with clear comments.  
+- Ready-to-use reference for **interview preparation** and **academic learning**.
 
 ---
 
 ## 🏆 Author
 
-**Your Name**  
-📧 [your.email@example.com](mailto:your.email@example.com)  
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/your-linkedin/)  
+**Kadam Tejeshwar Sai**  
+📧 [kadamtejesh07@gmail.com](mailto:kadamtejesh07@gmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/tejeshwar-sai-kadam-65a299281/)  
 
 ---
 
-⭐ *If you find this repository helpful, don’t forget to give it a star!* ⭐
+⭐ *If you find this project useful, consider giving it a star on GitHub!* ⭐
 """;
 
-        try (FileWriter fileWriter = new FileWriter("README.md")) {
-            fileWriter.write(readmeContent);
-            System.out.println("✅ README.md file generated successfully!");
-        } catch (IOException e) {
-            System.out.println("❌ Error while generating README: " + e.getMessage());
-        }
+        FileWriter fw = new FileWriter("README.md");
+        fw.write(readmeContent);
+        fw.close();
     }
 }
+
